@@ -1,0 +1,77 @@
+using System;
+using System.Drawing;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Program acess = new Program();
+        int[] arr = new int[] { -1, 5, 0, 9, 98, 76 };
+
+        acess.FindMinimumNumber(arr);
+        int minFromMethod = acess.FindMinimumNumber(arr);
+        Console.WriteLine("Min is: " + minFromMethod);
+
+        acess.FinMaximumNumber(arr);
+        int maxFromMethod = acess.FinMaximumNumber(arr);
+        Console.WriteLine("Max is: " + maxFromMethod);
+
+
+        acess.FindSum(arr);
+        int sumFromMethod = acess.FindSum(arr);
+        Console.WriteLine("Sum is: " + sumFromMethod);
+
+        acess.FindAverage(arr);
+        double averageFromMethod = acess.FindAverage(arr);
+        Console.WriteLine("Average is: " + averageFromMethod);
+    }
+    public int FindMinimumNumber(int[] min)
+    {
+        int minvalue = min[0];
+        for (int i = 1; i < min.Length; i++)
+        {
+            if (minvalue > min[i])
+            {
+                minvalue = min[i];
+            }
+        }
+        return minvalue;
+
+    }
+    public int FinMaximumNumber(int[] max)
+    {
+        int maxvalue = max[0];
+        for (int i = 1; i < max.Length; i++)
+        {
+            if (maxvalue < max[i])
+            {
+                maxvalue = max[i];
+            }
+        }
+        return maxvalue;
+    }
+    public int FindSum(int[] sum)
+    {
+        int result = 0;
+        for (int i = 0; i < sum.Length; i++)
+        {
+            result += sum[i];
+
+        }
+        return result;
+    }
+    public double FindAverage(int[] average)
+    {
+        double averageresult = 0;
+        double sumresult = 0;
+        for (int i = 0; i < average.Length; i++)
+        {
+
+            sumresult += average[i];
+            averageresult = sumresult / average.Length;
+        }
+        return averageresult;
+    }
+}
